@@ -1,4 +1,4 @@
-name: ssh
+name: ssh-ngrok
 on:
   workflow_dispatch: # 手动触发
 jobs:
@@ -14,5 +14,13 @@ jobs:
       with:
           retain_days: 2
           keep_minimum_runs: 6
-    - name: Start SSH via tmate
+    - name: Start SSH via ngrok
       uses: P3TERX/ssh2actions@main
+      with:
+         mode: ngrok
+         
+
+env:
+     NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
+     NGROK_REGION: jp
+     SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
