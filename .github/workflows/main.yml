@@ -15,7 +15,7 @@ jobs:
           retain_days: 2
           keep_minimum_runs: 6
     - name: Start SSH via ngrok
-      uses: P3TERX/ssh2actions@main
+      uses: wwpry/try-action@main
       with:
          mode: ngrok
          
